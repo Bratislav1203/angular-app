@@ -1,10 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-first-app';
+  poruka: string;
+  
+  constructor(private httpClient: HttpClient) { }
+  
+  ngOnInit() {
+    //this.httpClient.get('http://localhost:8080/helloworld', { responseType: 'text' }).subscribe(data => this.poruka = data);
+    this.poruka = "Poruka";
+  }
+
 }
